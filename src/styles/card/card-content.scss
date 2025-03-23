@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+$bg-main: #1C2023;
+$bg-card: #141615;
+$text-primary: #fff;
+$text-secondary: #A9C7C7;
+
+@mixin font-style($font, $size, $weight, $color) {
+    font-family: $font, sans-serif;
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+}
+
+@mixin flex-center($direction: row, $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: center;
+    gap: $gap;
+}
+
+.mainSection {
+    background-color: $bg-main;
+    width: 100%;
+    height: 1000px;
+    @include flex-center(column);
+
+    .first-block {
+        text-align: center;
+        padding-top: 50px;
+        
+        h1 {
+            @include font-style('Rubik', 40px, 600, $text-primary);
+        }
+
+        .list {
+            @include flex-center(row, 50px);
+            flex-wrap: wrap;
+            margin-top: 50px;
+            
+            .card {
+                background-color: $bg-card;
+                padding: 25px;
+                border-radius: 8px;
+                text-align: center;
+
+                img {
+                    width: 20vw;
+                }
+                
+                h3 {
+                    @include font-style('Rubik', 18px, 400, $text-primary);
+                    margin-top: 20px;
+                }
+                
+                p {
+                    @include font-style('Rubik', 16px, 300, $text-secondary);
+                }
+                div{
+                    margin-top: 20px;
+                    span{
+                        font-size: 14px;
+                        font-family: 'Rubik';
+                        color: #8C96A0;
+                    }
+                }
+            }
+        }
+    }
+}
