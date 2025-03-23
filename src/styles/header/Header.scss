@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+header {
+  padding-bottom: 25px;
+  padding-left: 200px;
+  padding-top: 25px;
+  background-color: rgb(37, 37, 37);
+  flex-wrap: wrap;
+
+  .top-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .menu-button {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      width: 30px;
+      height: 22px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      margin-top: 1.5vw;
+      z-index: 1000;
+
+      .bar {
+        display: block;
+        width: 3vw;
+        height: 0.3vw;
+        border-radius: 5px;
+        background-color: #fff;
+        transition: all 0.3s ease;
+      }
+
+      &.open-burger-menu {
+        .bar:nth-child(1) {
+          transform: rotate(45deg) translateY(8px);
+        }
+
+        .bar:nth-child(2) {
+          opacity: 0;
+        }
+
+        .bar:nth-child(3) {
+          transform: rotate(-45deg) translateY(-9px);
+        }
+      }
+
+      &:hover .bar {
+        background-color: #555;
+      }
+    }
+
+    .navigation {
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      z-index: 999;
+
+      &.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .nav-list {
+        font-family: 'Rubik';
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        list-style: none;
+        font-size: 1.5rem;
+
+        .nav-item a {
+          color: white;
+          text-decoration: none;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: red;
+          }
+        }
+      }
+    }
+  }
+  .header__bottom {
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: height 0.4s ease-in-out, opacity 0.4s ease-in-out,
+      visibility 0.4s ease-in-out, transform 0.4s ease-in-out;
+    background: transparent;
+
+    &.visible {
+      height: 400px;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .container-text {
+      width: 50%;
+      margin-top: 100px;
+
+      h1 {
+        font-family: 'Rubik';
+        color: #fff;
+        font-weight: 600;
+        font-size: 80px;
+      }
+
+      p {
+        font-family: 'Inter';
+        font-size: 18px;
+        color: #a9c7c7;
+        margin-top: 10px;
+        font-weight: 400;
+      }
+
+      button {
+        font-family: 'Rubik';
+        width: 150px;
+        padding: 10px;
+        border-radius: 3px;
+        color: #fff;
+        font-weight: 500;
+        font-size: 16px;
+        border: none;
+        background-color: #8856d9;
+        margin-top: 20px;
+      }
+    }
+  }
+}
