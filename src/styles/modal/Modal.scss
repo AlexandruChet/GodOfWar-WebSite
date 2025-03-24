@@ -1,23 +1,28 @@
-@mixin param($width, $height) {
-    width: $width;
-    height: $height;
-}
-
 .modal-window {
     position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: rgba(0, 0, 0, 0.8);
     visibility: hidden;
     opacity: 0;
-    z-index: 1000;
-    @include param(500px, 600px);
-    background: rgb(0, 0, 0);
-    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(48, 55, 63, 1) 63%);
+    z-index: 9999999999999;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 
-    &.active {
+    &.visible {
         visibility: visible;
         opacity: 1;
     }
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
 }

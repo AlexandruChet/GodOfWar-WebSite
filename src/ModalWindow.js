@@ -1,9 +1,16 @@
-import './styles/modal/Modal.scss'
+import React from "react";
+import "./styles/modal/Modal.scss";
 
-function modalWindow() {
-    return(
-        <section className="modal-window"></section>
-    )
+function ModalWindow({ isVisible, toggleModal }) {
+    console.log("Modal isVisible:", isVisible);
+
+    return (
+        <section className={`modal-window ${isVisible ? "visible" : ""}`}>
+            <div className="modal-content">
+                <button onClick={toggleModal}>Close Modal</button>
+            </div>
+        </section>
+    );
 }
 
-export default modalWindow
+export default ModalWindow;
