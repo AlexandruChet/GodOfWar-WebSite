@@ -56,13 +56,14 @@ header {
     }
 
     .navigation {
+      display: flex;
       position: absolute;
       top: 50px;
-      right: 20px;
+      right: 15vw;
       background-color: rgba(0, 0, 0, 0.9);
       padding: 20px;
       border-radius: 10px;
-      transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+      transition: transform 0.8s ease, opacity 0.8s ease, visibility 0.8s ease;
       opacity: 0;
       visibility: hidden;
       transform: translateY(-10px);
@@ -77,12 +78,16 @@ header {
       .nav-list {
         font-family: 'Rubik';
         display: flex;
-        flex-direction: column;
         gap: 10px;
         list-style: none;
         font-size: 1.5rem;
 
-        .nav-item a {
+        .nav-item button {
+          display: flex;
+          font-size: 20px;
+          font-family: 'Rubik';
+          border: none;
+          background: none;
           color: white;
           text-decoration: none;
           transition: color 0.3s ease;
@@ -143,8 +148,15 @@ header {
         font-size: 16px;
         border: none;
         background-color: #8856d9;
+        cursor: pointer;
         margin-top: 20px;
       }
     }
+  }
+}
+
+@media(max-width: 768px) {
+  .nav-list{
+    flex-direction: column;
   }
 }

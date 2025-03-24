@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
-$bg-main: #1C2023;
+$bg-main: #1c2023;
 $bg-card: #141615;
 $text-primary: #fff;
-$text-secondary: #A9C7C7;
+$text-secondary: #a9c7c7;
 
 @mixin font-style($font, $size, $weight, $color) {
     font-family: $font, sans-serif;
@@ -23,22 +23,21 @@ $text-secondary: #A9C7C7;
 .mainSection {
     background-color: $bg-main;
     width: 100%;
-    height: 1000px;
-    @include flex-center(column);
+    height: 1100px;
 
     .first-block {
         text-align: center;
         padding-top: 50px;
-        
+
         h1 {
-            @include font-style('Rubik', 40px, 600, $text-primary);
+            @include font-style("Rubik", 40px, 600, $text-primary);
         }
 
         .list {
             @include flex-center(row, 50px);
             flex-wrap: wrap;
             margin-top: 50px;
-            
+
             .card {
                 background-color: $bg-card;
                 padding: 25px;
@@ -48,22 +47,106 @@ $text-secondary: #A9C7C7;
                 img {
                     width: 20vw;
                 }
-                
+
                 h3 {
-                    @include font-style('Rubik', 18px, 400, $text-primary);
+                    @include font-style("Rubik", 18px, 400, $text-primary);
                     margin-top: 20px;
                 }
-                
+
                 p {
-                    @include font-style('Rubik', 16px, 300, $text-secondary);
+                    @include font-style("Rubik", 16px, 300, $text-secondary);
                 }
-                div{
+
+                div {
                     margin-top: 20px;
-                    span{
+
+                    span {
                         font-size: 14px;
-                        font-family: 'Rubik';
-                        color: #8C96A0;
+                        font-family: "Rubik";
+                        color: #8c96a0;
                     }
+
+                    button {
+                        margin-top: 20px;
+                        border-radius: 5px;
+                        color: #fff;
+                        background-color: #8856d9;
+                        border: none;
+                        width: 150px;
+                        padding: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    .second-block {
+        justify-content: center;
+        margin-top: 80px;
+        text-align: center;
+
+        h1 {
+            @include font-style("Rubik", 40px, 600, $text-primary);
+        }
+
+        .main-content {
+            justify-content: center;
+            display: flex;
+
+            div {
+                margin-top: 50px;
+                width: 50%;
+                justify-content: center;
+
+                .first-paragraph {
+                    @include font-style("Rubik", 18px, 300, $text-secondary);
+                    line-height: 27px;
+
+                    strong {
+                        font-weight: 700;
+                        color: #8856D9;
+                    }
+                }
+
+                .second-paragraph {
+                    margin-top: 20px;
+                    @include font-style("Rubik", 18px, 300, $text-secondary);
+                    line-height: 27px;
+
+                    strong {
+                        font-weight: 700;
+                        color: #FF4136;
+                    }
+                }
+
+                div {
+                    margin-left: 50px;
+                    text-align: center;
+                    display: flex;
+                    gap: 100PX;
+
+                    h3 {
+                        @include font-style("Rubik", 18px, 700, $text-primary);
+                    }
+
+                    button {
+                        border: none;
+                        border-radius: 10px;
+                        width: 120%;
+                        background-color: #FF4136;
+                        @include font-style("Rubik", 18px, 700, $text-primary);
+                        padding: 5px;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            img {
+                filter: drop-shadow(0 0 50px #ffffff);
+                transition: 0.5s all ease-in-out;
+                &:hover{
+                    scale: 1.1;
+                    filter: drop-shadow(20px 20px 50px #ffffff);
                 }
             }
         }

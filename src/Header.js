@@ -6,7 +6,6 @@ function Header() {
 
   function toggleMenu() {
     setIsOpen((prev) => !prev);
-    console.log("Menu open:", !isOpen);
   }
 
   return (
@@ -23,22 +22,22 @@ function Header() {
         <nav className={`navigation ${isOpen ? "visible" : ""}`}>
           <ul className="nav-list">
             <li className="nav-item">
-              <a href="#">editions</a>
+              <button className="nav-link">editions</button>
             </li>
             <li className="nav-item">
-              <a href="#">controller</a>
+              <button className="nav-link">controller</button>
             </li>
             <li className="nav-item">
-              <a href="#">about game</a>
+              <button className="nav-link">about game</button>
             </li>
             <li className="nav-item">
-              <a href="#">explore</a>
+              <button className="nav-link">explore</button>
             </li>
             <li className="nav-item">
-              <a href="#">news</a>
+              <button className="nav-link">news</button>
             </li>
             <li className="nav-item">
-              <a href="#">FAQ</a>
+              <button className="nav-link">FAQ</button>
             </li>
           </ul>
         </nav>
